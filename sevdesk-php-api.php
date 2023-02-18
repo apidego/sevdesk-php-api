@@ -9,7 +9,7 @@ class sevdesk_client {
         return true;
     }
 
-    protected function api_call($method, $endpoint, $data): object {
+    protected function api_call($method, $endpoint, $data = []): object {
         $curl = curl_init();
 
         $header = [
@@ -38,7 +38,7 @@ class sevdesk_client {
     }
 
     public function get_contacts(): object {
-        return $this->api_call('GET', 'Contact', []);
+        return $this->api_call('GET', 'Contact');
     }
 
 
