@@ -41,5 +41,7 @@ class sevdesk_client {
         return $this->api_call('GET', 'Contact');
     }
 
-
+    public function get_contact(int $id): object {
+        return $this->api_call('GET', 'Contact/' . $id);
+    }
 }
