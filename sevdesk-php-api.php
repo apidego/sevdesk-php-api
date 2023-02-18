@@ -14,7 +14,7 @@ class sevdesk_client {
 
         $header = [
             'Content-type: application/json',
-            'Authorization: Bearer ' . $this->api_key,
+            'Authorization: ' . $this->api_key,
         ];
 
 
@@ -35,6 +35,10 @@ class sevdesk_client {
         curl_close($curl);
 
         return json_decode($response);
+    }
+
+    public function get_contacts(): object {
+        return $this->api_call('GET', 'Contact', []);
     }
 
 
